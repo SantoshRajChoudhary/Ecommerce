@@ -1,0 +1,126 @@
+.kindred-section {
+    position: relative;
+    width: 100%;
+    height: 110vh; /* Taller to allow for vertical offsets */
+    background-color: #f9f8f6; /* Off-white luxury background */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Instagram Overlay */
+.instagram-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    text-align: center;
+    pointer-events: none;
+    mix-blend-mode: multiply; /* Optional: makes it look more integrated */
+}
+
+.instagram-overlay h3 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.instagram-overlay p {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* Marquee Container */
+.kindred-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.kindred-marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Overlap handled by margins */
+    animation: scrollAnimation 50s linear infinite;
+    padding-left: 100px;
+}
+
+/* Base Card Style */
+.kindred-img-card {
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.img-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.kindred-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.kindred-img-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Sizes */
+.kindred-img-card.large { width: 450px; height: 600px; }
+.kindred-img-card.medium { width: 320px; height: 450px; }
+.kindred-img-card.small { width: 280px; height: 380px; }
+
+/* Vertically Staggered Offsets */
+.kindred-img-card.top { 
+    margin-top: -150px; 
+    z-index: 10;
+}
+
+.kindred-img-card.overlap { 
+    margin-left: -80px; /* Negative margin for overlap */
+    margin-top: -250px;
+    z-index: 20;
+}
+
+.kindred-img-card.bottom { 
+    margin-top: 300px; 
+    margin-left: -50px;
+    z-index: 15;
+}
+
+.kindred-img-card.middle { 
+    margin-top: 50px; 
+    margin-left: 60px;
+    z-index: 5;
+}
+
+/* Continuous Scroll Animation */
+@keyframes scrollAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .kindred-section { height: 80vh; }
+    .kindred-img-card.large { width: 280px; height: 380px; }
+    .kindred-img-card.medium { width: 200px; height: 280px; }
+    .kindred-img-card.small { width: 150px; height: 220px; }
+    .instagram-overlay h3 { font-size: 1.5rem; }
+    .kindred-img-card.overlap { margin-left: -40px; }
+}

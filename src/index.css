@@ -1,0 +1,45 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #ffffff;
+  --white: #000000;
+  --cream: #f4f4f4;
+  --uniqlo-red: #ff0000;
+  --gold: #ff0000;
+  --gold-light: #ff4d4d;
+  --gray: #333333;
+  --dark: #f8f8f8;
+  --border: rgba(0,0,0,0.1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Remove custom cursor for Uniqlo aesthetic */
+.cursor-dot, .cursor-ring { display: none !important; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+::selection { background: var(--gold); color: var(--black); }
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+
+.product-item:hover .add-btn {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-zoom-img {
+  transform-origin: center;
+  will-change: transform;
+}
+
