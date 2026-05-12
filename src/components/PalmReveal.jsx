@@ -2,11 +2,11 @@ import React, { useState, useRef } from 'react';
 import './PalmReveal.css';
 
 const palmCollections = [
-  { id: 1, title: 'Outerwear', icon: '🧥', count: 24, img: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600' },
-  { id: 2, title: 'T-Shirts', icon: '👕', count: 86, img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600' },
-  { id: 3, title: 'Accessories', icon: '🎒', count: 42, img: 'https://images.unsplash.com/photo-1544816153-12ad58a1440d?w=600' },
-  { id: 4, title: 'Footwear', icon: '👟', count: 31, img: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600' },
-  { id: 5, title: 'New Drops', icon: '🔥', count: 12, img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600' },
+  { id: 1, title: 'Outerwear', icon: '🧥', count: 24, img: 'images/outerwear.png' },
+  { id: 2, title: 'T-Shirts', icon: '👕', count: 86, img: 'images/hangers.png' },
+  { id: 3, title: 'Accessories', icon: '🎒', count: 42, img: 'images/hero_accessory.png' },
+  { id: 4, title: 'Footwear', icon: '👟', count: 31, img: 'images/life_4.png' },
+  { id: 5, title: 'New Drops', icon: '🔥', count: 12, img: 'images/new_drops.png' },
 ];
 
 function PalmItem({ item }) {

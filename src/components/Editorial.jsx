@@ -62,7 +62,7 @@ export default function Editorial() {
       >
         <img
           ref={imgRef}
-          src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&q=80&w=1000"
+          src="images/editorial.png"
           alt="LifeWear editorial"
           style={{
             position: 'absolute',

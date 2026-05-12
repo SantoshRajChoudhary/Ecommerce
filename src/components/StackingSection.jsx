@@ -6,10 +6,10 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger)
 
 const cards = [
-  { id: 1, title: "Men's Collection", subtitle: "Summer Essentials", bg: '#f4f4f4', img: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=1000' },
-  { id: 2, title: "Women's Collection", subtitle: "New Arrivals", bg: '#e8e8e8', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1000' },
-  { id: 3, title: "Kids & Baby", subtitle: "Comfort First", bg: '#f9f9f9', img: 'https://images.unsplash.com/photo-1519704943920-18447d21751b?auto=format&fit=crop&q=80&w=1000' },
-  { id: 4, title: "Accessories", subtitle: "Final Touches", bg: '#ececec', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1000' },
+  { id: 1, title: "Men's Collection", subtitle: "Summer Essentials", bg: '#f4f4f4', img: 'images/men.png' },
+  { id: 2, title: "Women's Collection", subtitle: "New Arrivals", bg: '#e8e8e8', img: 'images/hero_model.png' },
+  { id: 3, title: "Kids & Baby", subtitle: "Comfort First", bg: '#f9f9f9', img: 'images/kids.png' },
+  { id: 4, title: "Accessories", subtitle: "Final Touches", bg: '#ececec', img: 'images/hero_accessory.png' },
 ]
 
 export default function StackingSection() {
@@ -45,7 +45,6 @@ export default function StackingSection() {
         { 
           scale: 0.9, 
           opacity: 0.4, 
-          filter: 'blur(8px)',
           y: -50,
           ease: 'none' 
         }, 
@@ -70,6 +69,7 @@ export default function StackingSection() {
             top: 0,
             left: 0,
             zIndex: i + 1,
+            willChange: 'transform'
           }}
         >
           {/* Card Content Wrapper */}

@@ -16,6 +16,7 @@ import TextMarquee from './components/TextMarquee'
 import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import PageTransition from './components/PageTransition'
+import WebGLBackground from './components/WebGLBackground'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,15 +25,16 @@ export default function App() {
 
   return (
     <div style={{ background: '#ffffff' }}>
-      
+
       {/* Page Reveal Transition */}
       <PageTransition ready={loaded} />
 
       <OrderNav />
 
       <div className="main-content">
-        <main style={{ paddingTop: 0 }}>
+        <main style={{ paddingTop: 0, position: 'relative' }}>
           <Hero ready={loaded} />
+          <WebGLBackground />
           <KindredSlider />
           <StackingSection />
           <Editorial />
@@ -45,7 +47,7 @@ export default function App() {
           <Newsletter />
         </main>
       </div>
-      
+
       <Footer />
     </div>
   )

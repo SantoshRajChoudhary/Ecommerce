@@ -43,3 +43,20 @@ button { font-family: inherit; }
   will-change: transform;
 }
 
+/* Performance Optimizations */
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimization for all major animated components */
+.main-content * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+img {
+  content-visibility: auto; /* Browser optimizes rendering of off-screen images */
+}
+

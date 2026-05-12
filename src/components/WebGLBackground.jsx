@@ -97,17 +97,26 @@ export default function WebGLBackground() {
     // Fade in
     gsap.to(mat.uniforms.uOpacity, { value: 0.6, duration: 3, ease: 'power2.inOut' })
 
+    // Visibility Observer
+    let isVisible = true
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting
+    }, { threshold: 0.1 })
+    observer.observe(mount)
+
     let animId
     let startTime = performance.now()
     const animate = () => {
+      if (isVisible) {
+        const t = (performance.now() - startTime) / 1000
+        mat.uniforms.uTime.value = t
+        particles.rotation.y = t * 0.02 + mouseX * 0.05
+        particles.rotation.x = mouseY * 0.03
+        camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.02
+        camera.position.y += (mouseY * 0.2 - camera.position.y) * 0.02
+        renderer.render(scene, camera)
+      }
       animId = requestAnimationFrame(animate)
-      const t = (performance.now() - startTime) / 1000
-      mat.uniforms.uTime.value = t
-      particles.rotation.y = t * 0.02 + mouseX * 0.05
-      particles.rotation.x = mouseY * 0.03
-      camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.02
-      camera.position.y += (mouseY * 0.2 - camera.position.y) * 0.02
-      renderer.render(scene, camera)
     }
     animate()
 
@@ -122,6 +131,7 @@ export default function WebGLBackground() {
       cancelAnimationFrame(animId)
       window.removeEventListener('mousemove', onMouse)
       window.removeEventListener('resize', onResize)
+      observer.disconnect()
       renderer.dispose()
       if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement)
     }

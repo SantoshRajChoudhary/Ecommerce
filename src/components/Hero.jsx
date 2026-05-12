@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 const heroImages = [
-  { src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800", top: '15%', left: '10%', size: 200, r: -10 },
-  { src: "https://images.unsplash.com/photo-1539109132382-381bb3f1c2b3?q=80&w=800", top: '20%', right: '10%', size: 250, r: 12 },
-  { src: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=800", bottom: '15%', right: '15%', size: 180, r: -5 },
+  { src: "images/hero_model.png", top: '12%', left: '8%', width: 220, height: 300, r: -8 },
+  { src: "images/hero_fabric.png", top: '15%', right: '10%', width: 240, height: 280, r: 12 },
+  { src: "images/hangers.png", bottom: '12%', left: '10%', width: 200, height: 260, r: 6 },
+  { src: "images/hero_accessory.png", bottom: '15%', right: '8%', width: 260, height: 320, r: -10 },
 ]
 
 export default function Hero({ ready }) {
@@ -119,10 +120,11 @@ export default function Hero({ ready }) {
         ref={bgImageRef}
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
-          background: 'url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=2000") center/cover no-repeat',
+          background: 'url("images/hero_bg.png") center/cover no-repeat',
           opacity: 0.6,
           transform: 'scale(1.2)', // Initial scale for zoom-out effect
           clipPath: 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)',
+          willChange: 'transform, clip-path'
         }}
       />
 
@@ -138,14 +140,15 @@ export default function Hero({ ready }) {
             left: img.left,
             right: img.right,
             bottom: img.bottom,
-            width: img.size,
-            height: img.size * 1.3,
+            width: img.width || img.size,
+            height: img.height || img.size * 1.3,
             zIndex: 15,
-            borderRadius: 20,
+            borderRadius: 24,
             overflow: 'hidden',
             boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
             background: `url(${img.src}) center/cover no-repeat`,
-            border: '1px solid rgba(255,255,255,0.1)'
+            border: '1px solid rgba(255,255,255,0.1)',
+            willChange: 'transform'
           }}
         />
       ))}

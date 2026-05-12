@@ -13,36 +13,67 @@ const items = [
 export default function InteractiveCards() {
   const containerRef = useRef(null)
 
+  useGSAP(() => {
+    // Scroll Entrance
+    gsap.from('.interactive-card', {
+      y: 100,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1.2,
+      ease: 'expo.out',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%'
+      }
+    })
+  }, { scope: containerRef })
+
   const handleMouseMove = (e) => {
     const card = e.currentTarget
+    const label = card.querySelector('.card-label')
     const { left, top, width, height } = card.getBoundingClientRect()
     
-    // Calculate mouse position relative to the card center
-    const xPercent = (e.clientX - left) / width - 0.5
-    const yPercent = (e.clientY - top) / height - 0.5
+    const x = e.clientX - left - width / 2
+    const y = e.clientY - top - height / 2
 
+    // Magnetic Card
     gsap.to(card, {
-      x: xPercent * 30, // Slight movement
-      y: yPercent * 30,
-      rotationY: xPercent * 30, // 3D tilt
-      rotationX: -yPercent * 30,
-      scale: 1.05,
-      duration: 0.5,
-      ease: 'power2.out',
+      x: x * 0.2,
+      y: y * 0.2,
+      scale: 1.02,
+      duration: 0.6,
+      ease: 'power3.out',
+      overwrite: 'auto'
+    })
+
+    // Parallax Label (moves further than card for depth)
+    gsap.to(label, {
+      x: x * 0.4,
+      y: y * 0.4,
+      duration: 0.7,
+      ease: 'power3.out',
       overwrite: 'auto'
     })
   }
 
   const handleMouseLeave = (e) => {
-    // Reset card position smoothly
-    gsap.to(e.currentTarget, {
+    const card = e.currentTarget
+    const label = card.querySelector('.card-label')
+
+    gsap.to(card, {
       x: 0,
       y: 0,
-      rotationY: 0,
-      rotationX: 0,
       scale: 1,
       duration: 0.8,
-      ease: 'elastic.out(1, 0.5)',
+      ease: 'elastic.out(1, 0.4)',
+      overwrite: 'auto'
+    })
+
+    gsap.to(label, {
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: 'elastic.out(1, 0.3)',
       overwrite: 'auto'
     })
   }
@@ -54,7 +85,6 @@ export default function InteractiveCards() {
         padding: '10rem 5%', 
         background: '#fff', 
         overflow: 'hidden',
-        perspective: '1200px'
       }}
     >
       <div style={{ marginBottom: '5rem', textAlign: 'center' }}>
@@ -71,7 +101,7 @@ export default function InteractiveCards() {
 
       <div style={{ 
         display: 'flex', 
-        gap: '2.5rem', 
+        gap: '3rem', 
         justifyContent: 'center',
         flexWrap: 'wrap'
       }}>
@@ -82,29 +112,33 @@ export default function InteractiveCards() {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{
-              flex: '0 0 240px',
-              height: '340px',
+              flex: '0 0 260px',
+              height: '360px',
               background: `url(${item.src}) center/cover no-repeat`,
-              borderRadius: '2px',
-              boxShadow: '0 30px 60px rgba(0,0,0,0.12)',
+              borderRadius: '0px',
+              boxShadow: '0 40px 80px rgba(0,0,0,0.08)',
               display: 'flex',
               alignItems: 'flex-end',
-              padding: '1.5rem',
+              justifyContent: 'center',
+              paddingBottom: '2.5rem',
               cursor: 'pointer',
-              transformStyle: 'preserve-3d',
+              position: 'relative',
               willChange: 'transform'
             }}
           >
-            <div style={{
+            <div className="card-label" style={{
               background: '#000',
               color: '#fff',
-              padding: '10px 20px',
-              fontSize: '11px',
-              fontWeight: 700,
+              padding: '12px 24px',
+              fontSize: '10px',
+              fontWeight: 800,
               textTransform: 'uppercase',
               fontFamily: 'Helvetica, Arial, sans-serif',
-              letterSpacing: '1px',
-              pointerEvents: 'none' // Ensure text doesn't interfere with mousemove
+              letterSpacing: '2px',
+              pointerEvents: 'none',
+              boxShadow: '0 15px 30px rgba(0,0,0,0.3)',
+              position: 'relative',
+              zIndex: 10
             }}>
               {item.title}
             </div>

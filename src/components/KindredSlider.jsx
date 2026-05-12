@@ -2,11 +2,10 @@ import React from 'react';
 import './KindredSlider.css';
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000", type: "large", offset: "top" },
-  { src: "https://images.unsplash.com/photo-1539109132382-381bb3f1c2b3?q=80&w=1000", type: "medium", offset: "overlap" },
-  { src: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000", type: "small", offset: "bottom" },
-  { src: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=1000", type: "large", offset: "middle" },
-  { src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000", type: "medium", offset: "top" },
+  { src: "images/life_1.png", type: "large", offset: "top" },
+  { src: "images/life_2.png", type: "medium", offset: "overlap" },
+  { src: "images/life_3.png", type: "small", offset: "bottom" },
+  { src: "images/life_4.png", type: "large", offset: "middle" },
 ];
 
 // Duplicate for seamless loop
