@@ -9,7 +9,7 @@ import StackingSection from './components/StackingSection'
 import Editorial from './components/Editorial'
 import CircularCarousel from './components/CircularCarousel'
 import CategoryStrip from './components/CategoryStrip'
-import PalmReveal from './components/PalmReveal'
+import AtfyReveal from './components/AtfyReveal'
 import Products from './components/Products'
 import InteractiveCards from './components/InteractiveCards'
 import TextMarquee from './components/TextMarquee'
@@ -40,7 +40,7 @@ export default function App() {
           <Editorial />
           <CircularCarousel />
           <CategoryStrip />
-          <PalmReveal />
+          <AtfyReveal />
           <Products />
           <InteractiveCards />
           <TextMarquee text="UNIQUE DESIGNS · QUALITY · COMFORT · SIMPLICITY · EVERYDAY WEAR ·" />

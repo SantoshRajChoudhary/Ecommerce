@@ -73,7 +73,7 @@ export default function CircularCarousel() {
             margin: '0 0 2rem 0',
             color: '#1a1a1a'
           }}>
-            new to<br/>palm?
+            new to<br/>atfy?
           </h2>
           <p style={{
             fontFamily: 'Helvetica, Arial, sans-serif',
@@ -83,7 +83,7 @@ export default function CircularCarousel() {
             maxWidth: 600,
             margin: '0 auto 3rem auto'
           }}>
-            we'll walk you through mood-based design and how palm can enhance your lifestyle — with well-balanced boosts, no overwhelming highs, and all good vibes.
+            we'll walk you through mood-based design and how atfy can enhance your lifestyle — with well-balanced boosts, no overwhelming highs, and all good vibes.
           </p>
           <button style={{
             background: '#1a1a1a',

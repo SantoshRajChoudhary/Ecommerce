@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import './PalmReveal.css';
+import './AtfyReveal.css';
 
-const palmCollections = [
+const atfyCollections = [
   { id: 1, title: 'Outerwear', icon: '🧥', count: 24, img: 'images/outerwear.png' },
   { id: 2, title: 'T-Shirts', icon: '👕', count: 86, img: 'images/hangers.png' },
   { id: 3, title: 'Accessories', icon: '🎒', count: 42, img: 'images/hero_accessory.png' },
@@ -9,7 +9,7 @@ const palmCollections = [
   { id: 5, title: 'New Drops', icon: '🔥', count: 12, img: 'images/new_drops.png' },
 ];
 
-function PalmItem({ item }) {
+function AtfyItem({ item }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const itemRef = useRef(null);
@@ -26,21 +26,21 @@ function PalmItem({ item }) {
   return (
     <div 
       ref={itemRef}
-      className="palm-item"
+      className="atfy-item"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <a href="#products" className="palm-link">
-        <span className="palm-icon">{item.icon}</span>
-        <span className="palm-title">{item.title}</span>
-        <span className="palm-count">({item.count})</span>
+      <a href="#products" className="atfy-link">
+        <span className="atfy-icon">{item.icon}</span>
+        <span className="atfy-title">{item.title}</span>
+        <span className="atfy-count">({item.count})</span>
       </a>
       
       <img 
         src={item.img} 
         alt={item.title} 
-        className="palm-reveal-img"
+        className="atfy-reveal-img"
         style={{
           left: isHovered ? `${mousePos.x}px` : '50%',
           top: isHovered ? `${mousePos.y}px` : '50%',
@@ -52,14 +52,14 @@ function PalmItem({ item }) {
   );
 }
 
-export default function PalmReveal() {
+export default function AtfyReveal() {
   return (
-    <section className="palm-reveal-section">
-      <div className="palm-reveal-container">
-        <p className="palm-subtitle">The Palm Collections</p>
-        <div className="palm-reveal-list">
-          {palmCollections.map(item => (
-            <PalmItem key={item.id} item={item} />
+    <section className="atfy-reveal-section">
+      <div className="atfy-reveal-container">
+        <p className="atfy-subtitle">The Atfy Collections</p>
+        <div className="atfy-reveal-list">
+          {atfyCollections.map(item => (
+            <AtfyItem key={item.id} item={item} />
           ))}
         </div>
       </div>

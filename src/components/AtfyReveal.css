@@ -1,4 +1,4 @@
-.palm-reveal-section {
+.atfy-reveal-section {
     background-color: #ffffff;
     padding: 120px 0;
     width: 100%;
@@ -6,13 +6,13 @@
     justify-content: center;
 }
 
-.palm-reveal-container {
+.atfy-reveal-container {
     width: 100%;
     max-width: 900px;
     padding: 0 5%;
 }
 
-.palm-subtitle {
+.atfy-subtitle {
     font-family: 'Helvetica', sans-serif;
     font-size: 12px;
     text-transform: uppercase;
@@ -23,11 +23,11 @@
     font-weight: 900;
 }
 
-.palm-reveal-list {
+.atfy-reveal-list {
     border-top: 2px solid #000;
 }
 
-.palm-item {
+.atfy-item {
     position: relative;
     padding: 30px 0;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -35,7 +35,7 @@
     overflow: visible;
 }
 
-.palm-link {
+.atfy-link {
     text-decoration: none;
     color: #000;
     font-family: 'Helvetica', sans-serif;
@@ -50,12 +50,12 @@
     text-transform: uppercase;
 }
 
-.palm-icon {
+.atfy-icon {
     font-size: 2rem;
     opacity: 0.8;
 }
 
-.palm-count {
+.atfy-count {
     font-size: 1.4rem;
     color: #666;
     margin-left: auto;
@@ -64,7 +64,7 @@
 }
 
 /* The Reveal Image */
-.palm-reveal-img {
+.atfy-reveal-img {
     position: absolute;
     width: 320px;
     height: 400px;
@@ -78,14 +78,14 @@
 }
 
 /* Hover State */
-.palm-item:hover .palm-link {
+.atfy-item:hover .atfy-link {
     opacity: 0.2;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .palm-link { font-size: 1.8rem; }
-    .palm-icon { font-size: 1.2rem; }
-    .palm-count { font-size: 0.9rem; }
-    .palm-reveal-img { width: 200px; height: 260px; }
+    .atfy-link { font-size: 1.8rem; }
+    .atfy-icon { font-size: 1.2rem; }
+    .atfy-count { font-size: 0.9rem; }
+    .atfy-reveal-img { width: 200px; height: 260px; }
 }

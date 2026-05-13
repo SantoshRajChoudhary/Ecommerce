@@ -16,7 +16,7 @@ export default function KindredSlider() {
     <section className="kindred-section">
       {/* Center Text Overlay */}
       <div className="instagram-overlay">
-        <h3>#PALMANGELSOFFICIAL</h3>
+        <h3>#ATFYOFFICIAL</h3>
       </div>
 
       <div className="kindred-marquee-wrapper">

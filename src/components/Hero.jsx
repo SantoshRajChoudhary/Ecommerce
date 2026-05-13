@@ -107,7 +107,7 @@ export default function Hero({ ready }) {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [ready])
 
-  const titleText = "PALM COLLECTIONS"
+  const titleText = "ATFY COLLECTIONS"
   const chars = titleText.split("")
 
   return (

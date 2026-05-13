@@ -9,7 +9,7 @@ export default function Newsletter() {
       display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'
     }}>
       <h2 style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 28, fontWeight: 900, marginBottom: '1rem', textTransform: 'uppercase' }}>
-        Get the latest Palm Angels news
+        Get the latest Atfy news
       </h2>
       <p style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: 14, color: '#333', marginBottom: '2.5rem', maxWidth: 600 }}>
         Sign up to receive information on new arrivals, sales, and exclusive offers. Plus, get ₹300 off on your first order.

@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2026, Palm Angels</p>
+        <p>&copy; 2026, Atfy</p>
       </div>
     </footer>
   );
